@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniPay Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <div>
+         <h1>MiniPay Dashboard</h1>
+         <p>Paneli i kontrollit dhe simulimit të transaksioneve</p>
+        </div>
+
+        <div class="online">
+            ● SISTEMI ONLINE
+        </div>
+    </header>
+
+    <div class="grid">
+      <div class="left">
+        <section class="card">
+         <h2>Shto Ofrues të Ri</h2>
+
+            <form id="add-provider-form">
+                    <input id="provider-name" placeholder="Psh. Stripe">
+                    <input id="provider-currency" placeholder="Psh. USD">
+                    <input id="provider-url" placeholder="https://api.provider.com">
+                    <button type="submit">
+                        + Ruaj Ofruesin
+                    </button>
+
+             </form>
+</section>
+
+<section class="card">
+
+     <h2>Ofruesit e Regjistruar</h2>
+
+     <table>
+
+        <thead>
+            <tr>
+               <th>ID</th>
+               <th>Emri</th>
+               <th>Monedha</th>
+               <th>Statusi</th>
+               <th>Veprime</th>
+            </tr>
+          </thead>
+
+                <tbody id="providers-table-body">
+
+                </tbody>
+
+            </table>
+
+</section>
+
+        </div>
+
+        <div class="right">
+
+            <section class="card">
+                <h2>Simulo Pagesë</h2>
+                <form id="simulation-form">
+
+                    <select id="sim-provider">
+                        <option value="">
+                            -- Zgjidh Ofrues Aktiv --
+                        </option>
+                    </select>
+
+                    <div class="row">
+                        <input id="sim-amount" placeholder="100.50">
+                        <input id="sim-currency" placeholder="USD">
+                    </div>
+
+                    <input id="sim-desc"
+                           placeholder="Transaction test">
+
+                    <button type="submit">
+                        Ekzekuto Pagesën
+                    </button>
+
+                </form>
+
+            </section>
+
+            <section class="result-card">
+
+                <h3>Rezultati i Transaksionit Live</h3>
+                <pre id="json-result">
+Sistemi gati...
+                </pre>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
